@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>TRUST ME BRO! Hold my beer!</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body class="primary-text">
+
+
+<h1>TRUST ME BRO!</h1>
+
+<div id="question-section" class="regular-border">
+    <h2>Question</h2>
+    <p id="questionText">A squirrel stares at you intensely, what do you do?</p>
+    <label for="answerInput">Your answer</label>
+    <input type="text" id="answerInput" name="answer" placeholder="Type your answer here">
+</div>
+
+<div id="key-section" class="regular-border">
+    <h2>Keys</h2>
+    <div class="key-block">
+        <label for="publicKeyBase64">Public Key (Base64)</label>
+        <pre id="publicKeyBase64"></pre>
+    </div>
+    <div class="key-block">
+        <label for="privateKeyBase64">Private Key (Base64)</label>
+        <pre id="privateKeyBase64"></pre>
+    </div>
+</div>
+
+<div id="payload-section" class="regular-border">
+    <h2>Auth Payload Preview</h2>
+    <pre id="payloadJson" aria-live="polite"></pre>
+    <button id="submitBtn" type="button">Submit to Auth API</button>
+    <div id="submitStatus" role="status" aria-live="polite"></div>
+</div>
+
+<script type="application/javascript" src="home.js"></script>
+<script type="application/javascript" src="crypting.js"></script>
+
+</body>
+</html>
