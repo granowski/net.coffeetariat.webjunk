@@ -1,0 +1,231 @@
+:root {
+  --bg: #efefef;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #7c3aed; /* lavender/violet-600 */
+  --chip-bg: #eef2ff;
+  --chip-text: #3730a3;
+  --border: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+html { color-scheme: light; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(100% - 2rem, 980px);
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: -999px;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.site-header {
+    color: #eee;
+  border-bottom: 1px solid var(--border);
+  /*background: linear-gradient(180deg, #fafafa, #ffffff);*/
+    background-image: linear-gradient(to bottom, rgba(055,055,055,0.7), rgba(105,015,105,0.3)), url("./assets/502933639_10235652076989947_3944663927879469586_n.jpg");
+    /*background-size: cover;*/
+    /*background-position: center;*/
+
+    background-size: 100% auto;
+    background-position-y: 25%;
+    background-repeat: no-repeat;
+
+}
+
+/* Lighter text and link variants specifically within the site header */
+.site-header a {
+  color: #f3f4f6; /* light gray for better contrast on dark header */
+  text-decoration: none;
+}
+.site-header a:hover,
+.site-header a:focus {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.site-header .role {
+  color: #e5e7eb; /* lighten muted role text within header */
+}
+.site-header .contact {
+  color: #f3f4f6; /* ensure list items default text are light */
+}
+.site-header .contact span {
+  color: #f3f4f6;
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 0;
+}
+
+.identity .name {
+  margin: 0;
+  font-size: 2rem;
+}
+.identity .role {
+  margin: 0.175rem 0 0.7rem 0;
+  color: var(--muted);
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  padding: 0;
+  list-style: none;
+  margin: 0 0 0.7rem 0;
+}
+.contact a { color: var(--accent); text-decoration: none; }
+.contact a:hover { text-decoration: underline; }
+
+.actions .btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+.actions .btn:hover { border-color: var(--accent); }
+
+.portrait img {
+  display: block;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+main section {
+  padding: 0.9375rem 0;
+}
+main h2 {
+  font-size: 1.25rem;
+  margin: 0 0 0.525rem 0;
+}
+
+.summary p { margin: 0; }
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+.skill-chips li {
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border: 1px solid #c7d2fe;
+  padding: 0.35rem 0.6rem;
+  /*border-radius: 999px;*/
+  border-radius: 0.4rem;
+  font-size: 0.95rem;
+}
+
+/* Skill level color variants */
+.skill-chips li.beginner {
+  /* lavender - lightest */
+  background: #f5f3ff; /* violet-50 */
+  color: #6d28d9;      /* violet-700 for contrast */
+  border-color: #ddd6fe; /* violet-200 */
+}
+.skill-chips li.intermediate {
+  /* lavender - light */
+  background: #ede9fe; /* violet-100 */
+  color: #5b21b6;      /* violet-800 */
+  border-color: #c4b5fd; /* violet-300 */
+}
+.skill-chips li.advanced {
+  /* lavender - medium */
+  background: #ddd6fe; /* violet-200 */
+  color: #4c1d95;      /* violet-900 */
+  border-color: #a78bfa; /* violet-400 */
+}
+.skill-chips li.expert {
+  /* lavender - darker */
+  background: #c4b5fd; /* violet-300 */
+  color: #3b0764;      /* violet-950 for strong contrast */
+  border-color: #8b5cf6; /* violet-500 */
+}
+
+.experience .job { padding: 0.5625rem 0; }
+.job-header { display: flex; flex-direction: column; gap: 0.25rem; }
+.job-title { margin: 0; font-weight: 600; }
+.meta { color: var(--muted); font-size: 0.95rem; }
+.meta .separator { margin: 0 0.5rem; color: #d1d5db; }
+
+.bullets { margin: 0.35rem 0 0 1.25rem; }
+.bullets li { margin: 0.175rem 0; }
+
+.edu-list { margin: 0; padding-left: 1.25rem; }
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 0.9375rem 0 1.5rem;
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  .header-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .portrait { order: -1; }
+  .contact { justify-content: center; }
+}
+
+/* Print styles */
+@media print {
+  :root {
+    --bg: #fff;
+    --text: #000;
+    --muted: #444;
+    --accent: #000;
+    --border: #000;
+  }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .actions, .skip-link { display: none !important; }
+  .site-header, .site-footer { border: none; }
+  .container { width: 100%; margin: 0; }
+  a { color: inherit; text-decoration: none; }
+}
+
+
+/* Header-specific stronger overrides to ensure lighter variants win specificity */
+.site-header .identity .role {
+  color: #e5e7eb;
+}
+.site-header .contact a {
+  color: #f3f4f6;
+}
+.site-header .contact a:hover,
+.site-header .contact a:focus {
+  color: #ffffff;
+}
+.site-header .contact span {
+  color: #f3f4f6;
+}
