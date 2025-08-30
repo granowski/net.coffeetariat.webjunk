@@ -10,159 +10,38 @@
   }
 
   // Render Experience jobs from template if present
-  const tmpl = document.getElementById('job-template');
-  const jobsRoot = document.getElementById('jobs');
-  if (tmpl && jobsRoot) {
-    /** @type {{title:string, company:string, location:string, dates:string, bullets:string[]}[]} */
-    const jobs = [
-      {
-        title: 'Software Engineer 3 / Principal Software Engineer',
-        company: 'Wide Open West! (WOW)',
-        location: 'Denver, CO',
-        dates: 'August 2019 - June 2021',
-        bullets: [
-          'Led offshore Macedonian group in delivering the “self install kit” project',
-          'Wrote and improved Jira issue stories to improve hand-offs to offshore and other teams.',
-          'Worked directly with the warehouse staff to understand and implement the new shipment workflows.',
-          'Worked with warehouse vender to build the C# WebAPI Rest endpoints for taking shipment notifications JSON payloads and tracked shipped equipment in SQL Server databases.',
-          'Worked directly with the call center lead to improve the ASPNET MVC based React and Redux web tool.',
-          'Educated and encouraged offshore to participate in Agile ceremonies. Hosted stand-ups for developers and business owners in a timely manner by sticking to the 3 questions.',
-          'Worked with billing system team to understand the network CPE management.',
-          'Called technicians directly to gather information about poor experiences using their internal tools.',
-          'Code reviewed new features for quality, logging, and test code to gain stability of releases.',
-          'Introduced the “deployment playbook” concept, a way to track what needs to get done, by who, and when during downtime windows to facilitate safety in production system changes and confidence in participating party members.',
-          'Built and shared diagrams with Lucidchart, and documents in Google Drive to help communication and understanding.',
-          'Educated the Portuguese offshore team on use of OAuth and the REST abstraction layer we developed to improve the companies ability to change from one auth provider to the next.',
-          'Aided in the migration from Okta authentication services to Onelogin.',
-          'Updated and built ASPNET Core C# WebAPI docker containers that were deployed to AWS ECS and load balanced using ELB. Rebuilt the EC2 VMs that hosted the docker containers. Used CloudFormation to define the resources and deploy the services.',
-        ]
-      },
-      {
-        title: 'Technical Lead Developer of Acquisitions',
-        company: 'Open Technology Solutions (OTS)',
-        location: 'Centennial, Arapahoe County, CO',
-        dates: 'May 2018 - August 2019',
-        bullets: [
-          'Improved the ADA compliance of their single page app. App was built in React and Redux. Integrated a PDF viewer in their app so that their customers would be able to receive their terms and conditions.',
-          'Delivered the company’s long awaited for rewrite of their banking “loan application” written in ASP.NET MVC and replaced it with a dotnet core WebAPI with a React front-end to specifications designed from years earlier.',
-          'Guided aged developers into new Agile practices. Successfully was able to drive planning sessions to do estimates and gain a sense of velocity.',
-          'Successfully helped the enterprise team load balance an API that was taking load. Fixed the issues with encryption, the web proxy, and the F5 routing by working with the on-site network engineer.',
-          'Successfully built batch processes to migrate the company away from an unmaintainable web application to a partner’s new framework.',
-          'Took requirements from 3 separate product owners and delegated out to my team to solve individual problems that the product owners wanted addressed.',
-          'Successfully converted from a contract position to full time role.',
-        ]
-      },
-      {
-        title: 'Senior Software Developer',
-        company: 'Open Technology Solutions (OTS) placed by GavinHeath',
-        location: 'Centennial, Arapahoe County, CO',
-        dates: 'May 2017 - May 2018',
-        bullets: [
-          'Wrote the companies encryption tool that used AES 256. This tool was used to transfer critical PII about banking customers to our partners in order to deprecate the old legacy banking website.',
-          'Supported existing website tools and facilitated collaboration between teams to build reliable CI/CD using Octopus Deploy.',
-          'Deprecated a legacy .Net framework WebAPI by introducing a dotnet core WebAPI with Entity Framework to remove a whole layer of legacy ADO.Net hard-coded queries.',
-        ]
-      },
-      {
-        title: 'Sole In-house Lead Software Developer',
-        company: 'PayReel/CrewConnection',
-        location: 'Golden, CO',
-        dates: 'May 2016 - May 2017',
-        bullets: [
-          'Aided the CTO in establishing a development practice with a small group of people.',
-          'Worked directly with a newly trained CSPO (Certified Scrum Production Owner) to setup Trello boards.',
-          'Incorporated the support call staff into the process of creating new software improvements by gathering requirements and making sure their voices were heard. Brought them into weekly meetings to talk about report adjustments they would appreciate.',
-          'Led software integration work with ASPNET MVC  systems for communications with ADP’s REST APIs.',
-          'Integrated google analytics into their client’s job portal. The job portal was a Ruby on Rails application working on linux machines.',
-          'Brought the source code repositories which were spread across 3 different contractors in-house and setup git source tracking so that the company could reliably manage source changes.',
-          'Secured an internal time tracking and payroll calculating tool with OAuth protocol. Introduced JWT tokens to prevent non-sessions from slipping through to business logic.',
-          'Upgraded the internal staff portal’s dependencies by upgrading to the latest LLBLGen object mapper and improved the communications between the C# and Sql Server by optimizing T-SQL queries.',
-          'Reworked their client’s portal’s menu bar to match the company’s branding transition. Edited PHP code to incorporate new CSS and JavaScript (with jQuery) components into their portal.',
-        ]
-      },
-      {
-        title: 'Lead Full-stack Web Developer',
-        company: 'TurboAppeal',
-        location: 'Lakewood, CO',
-        dates: 'November 2015 - April 2016',
-        bullets: [
-          'Took PDF mock-ups of their desired customer onboarding portal and build the portal using AngularJS 1.5 and Bootstrap 3.',
-          'Integrated to a ASPNET MVC REST service to onboard customer’s into the system.',
-          'Successfully deployed their initial release for their series A funding.',
-          'Integrated Braintree payments into their website using JavaScript and integrating with a secure payment processor frame.',
-          'Improved SEO by optimizing robots.txt files',
-          'Primarily worked from home.'
-        ]
-      },
-      {
-        title: 'Mid-level Full-stack Web Engineer',
-        company: 'Food Service Warehouse',
-        location: 'Greenwood Village, CO',
-        dates: 'August 2014 - October 2015',
-        bullets: [
-          'Created our teams Jenkins Linux build server to automate our NodeJS and ASP.NET MVC applications.',
-          'Wrote bash shell scripts with release engineer to aid multiple teams on creating a consistent build process.',
-          'Led conversations with the head purchaser and the 3rd party vendor to improve our forecasting software.',
-          'Extracted 3rd party fraud integration code into a useful library that could be shared across applications. Turned the library project into a Semantic Versioned NuGet package.',
-          'Created our initial AngularJS based front-end for tracking customer’s shipments.',
-          'Reconfigured our CentOS Linux server’s firewalld service to secure incoming traffic.',
-        ]
-      },
-      {
-        title: 'Software Developer',
-        company: 'Sansio/Physio-Control',
-        location: 'Duluth, MN',
-        dates: 'September 2011 - March 2014',
-        bullets: [
-          'Worked directly with a lead developer in building custom APIs and built a green-field mobile application page with ASPNET WebForms and VB.Net to support our in-house medical care web app solution.',
-          'Repaired broken C1Reports',
-          'Provided development support by using the Kan Ban approach with an in-house built ticketing system.',
-          'Built custom ASPNET WebForms controls to improve reusability on the website.',
-          'Built a medication synchronization process with Backbone.js, jQuery, and JavaScript promises.',
-          'Provided a new web interface and printable form for entering UB04, UB92, and CMS-1500 insurance claim forms.',
-        ]
-      },
-      {
-        title: 'IT Support Staff',
-        company: 'Concordia Language Villages',
-        location: 'Bemidji, MN',
-        dates: 'Summers of 2005 - 2010',
-        bullets: [
-          'Ensured the kitchen’s software and networks were up and running throughout the state of Minnesota.',
-          'Imaged and refreshed computers with custom settings and language packs for each camp.',
-          'Provided individual support to counselors of the camps with their personal computers and the camp provided equipment.',
-          'Managed the checkout system that allowed camp counselors to receive and use audio and video devices.',
-          'Performed lots of heavy lifting of MFP printers…'
-        ]
-      }
-    ];
-
-    const frag = document.createDocumentFragment();
-
-    jobs.forEach(job => {
-      const clone = /** @type {HTMLElement} */(tmpl.content.firstElementChild.cloneNode(true));
-      const titleEl = clone.querySelector('.job-title');
-      const companyEl = clone.querySelector('.company');
-      const locationEl = clone.querySelector('.location');
-      const datesEl = clone.querySelector('.dates');
-      const bulletsEl = clone.querySelector('.bullets');
-
-      if (titleEl) titleEl.textContent = job.title;
-      if (companyEl) companyEl.textContent = job.company;
-      if (locationEl) locationEl.textContent = job.location;
-      if (datesEl) datesEl.textContent = job.dates;
-
-      if (bulletsEl) {
-        job.bullets.forEach(b => {
-          const li = document.createElement('li');
-          li.textContent = b;
-          bulletsEl.appendChild(li);
-        });
-      }
-
-      frag.appendChild(clone);
-    });
-
-    jobsRoot.appendChild(frag);
-  }
+  // const tmpl = document.getElementById('job-template');
+  // const jobsRoot = document.getElementById('jobs');
+  // if (tmpl && jobsRoot && jobsRoot.children.length === 0) {
+  //   /** @type {{title:string, company:string, location:string, dates:string, bullets:string[]}[]} */
+  //   const jobs = [];
+  //
+  //   const frag = document.createDocumentFragment();
+  //
+  //   jobs.forEach(job => {
+  //     const clone = /** @type {HTMLElement} */(tmpl.content.firstElementChild.cloneNode(true));
+  //     const titleEl = clone.querySelector('.job-title');
+  //     const companyEl = clone.querySelector('.company');
+  //     const locationEl = clone.querySelector('.location');
+  //     const datesEl = clone.querySelector('.dates');
+  //     const bulletsEl = clone.querySelector('.bullets');
+  //
+  //     if (titleEl) titleEl.textContent = job.title;
+  //     if (companyEl) companyEl.textContent = job.company;
+  //     if (locationEl) locationEl.textContent = job.location;
+  //     if (datesEl) datesEl.textContent = job.dates;
+  //
+  //     if (bulletsEl) {
+  //       job.bullets.forEach(b => {
+  //         const li = document.createElement('li');
+  //         li.textContent = b;
+  //         bulletsEl.appendChild(li);
+  //       });
+  //     }
+  //
+  //     frag.appendChild(clone);
+  //   });
+  //
+  //   jobsRoot.appendChild(frag);
+  // }
 })();
