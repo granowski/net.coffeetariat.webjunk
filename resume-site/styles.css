@@ -229,3 +229,45 @@ main h2 {
 .site-header .contact span {
   color: #f3f4f6;
 }
+
+
+/* ---------------------------------------------
+   Responsive media queries (6 slices by width)
+   Add or adjust rules inside these blocks as needed.
+---------------------------------------------- */
+
+/* XS: very small phones (>= 360px) */
+@media (min-width: 360px) {
+  :root { --breakpoint: "xs-360"; }
+  /* Place XS-specific styles here */
+}
+
+/* SM: small phones (>= 480px) */
+@media (min-width: 480px) {
+  :root { --breakpoint: "sm-480"; }
+  /* Place SM-specific styles here */
+}
+
+/* MD: large phones / small tablets (>= 640px) */
+@media (min-width: 640px) {
+  :root { --breakpoint: "md-640"; }
+  /* Place MD-specific styles here */
+}
+
+/* LG: tablets (>= 768px) */
+@media (min-width: 768px) {
+  :root { --breakpoint: "lg-768"; }
+  /* Place LG-specific styles here */
+}
+
+/* XL: small laptops/desktops (>= 1024px) */
+@media (min-width: 1024px) {
+  :root { --breakpoint: "xl-1024"; }
+  /* Place XL-specific styles here */
+}
+
+/* 2XL: large desktops (>= 1280px) */
+@media (min-width: 1280px) {
+  :root { --breakpoint: "2xl-1280"; }
+  /* Place 2XL-specific styles here */
+}
